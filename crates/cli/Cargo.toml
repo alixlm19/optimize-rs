@@ -1,0 +1,7 @@
+[package]
+name = "optimize_cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+optimize_engine = { path = "../engine/" }
