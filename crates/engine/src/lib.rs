@@ -1,21 +1,9 @@
-use std::str::FromStr;
+pub mod genetic;
+pub mod strategies;
+pub mod traits;
+pub mod types;
 
-pub struct Prompt {
-    pub content: String,
-}
-
-#[derive(Debug, PartialEq)]
-pub struct ParsePromptError;
-
-impl FromStr for Prompt {
-    type Err = ParsePromptError;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Prompt {
-            content: s.to_string(),
-        })
-    }
-}
+pub use types::Prompt;
 
 pub fn dummy_optimize(prompts: Vec<Prompt>) -> Vec<String> {
     prompts
